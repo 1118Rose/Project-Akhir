@@ -4,8 +4,6 @@ using Project_Akhir.Models;
 
 namespace Project_Akhir.Controllers
 { 
-
-    // INTERFACE
     internal class AutentikasiController : IAutentikasi
     {
         public string Login(string username, string password)
@@ -50,10 +48,7 @@ namespace Project_Akhir.Controllers
             return Login(user.Username, user.Password);
         }
 
-        public bool Register(
-            string email,
-            string username,
-            string password)
+        public bool Register(string email, string username, string password)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(Koneksi.connString))
             {

@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             panel1 = new Panel();
+            btnUserAkun = new Button();
             btnLap1 = new Button();
             pictureBox1 = new PictureBox();
             btnLogout1 = new Button();
@@ -41,7 +42,7 @@
             label1 = new Label();
             lblTotalDonatur = new Label();
             pictureBox2 = new PictureBox();
-            button7 = new Button();
+            btnRefresh = new Button();
             pnlTotalQuran = new Panel();
             label9 = new Label();
             label4 = new Label();
@@ -86,6 +87,7 @@
             // 
             panel1.BackColor = Color.White;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.Controls.Add(btnUserAkun);
             panel1.Controls.Add(btnLap1);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btnLogout1);
@@ -97,6 +99,23 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(190, 580);
             panel1.TabIndex = 0;
+            // 
+            // btnUserAkun
+            // 
+            btnUserAkun.AutoEllipsis = true;
+            btnUserAkun.BackColor = Color.Transparent;
+            btnUserAkun.FlatStyle = FlatStyle.Flat;
+            btnUserAkun.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUserAkun.ForeColor = Color.White;
+            btnUserAkun.Image = (Image)resources.GetObject("btnUserAkun.Image");
+            btnUserAkun.ImageAlign = ContentAlignment.MiddleLeft;
+            btnUserAkun.Location = new Point(22, 416);
+            btnUserAkun.Name = "btnUserAkun";
+            btnUserAkun.Size = new Size(150, 36);
+            btnUserAkun.TabIndex = 13;
+            btnUserAkun.Text = "    User Akun";
+            btnUserAkun.UseVisualStyleBackColor = false;
+            btnUserAkun.Click += btnUserAkun_Click;
             // 
             // btnLap1
             // 
@@ -234,18 +253,19 @@
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
-            // button7
+            // btnRefresh
             // 
-            button7.BackColor = Color.Transparent;
-            button7.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button7.Image = Properties.Resources.solar__refresh_broken;
-            button7.ImageAlign = ContentAlignment.MiddleLeft;
-            button7.Location = new Point(847, 344);
-            button7.Name = "button7";
-            button7.Size = new Size(155, 36);
-            button7.TabIndex = 10;
-            button7.Text = "Refresh Data";
-            button7.UseVisualStyleBackColor = false;
+            btnRefresh.BackColor = Color.Transparent;
+            btnRefresh.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRefresh.Image = Properties.Resources.solar__refresh_broken;
+            btnRefresh.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRefresh.Location = new Point(847, 344);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(155, 36);
+            btnRefresh.TabIndex = 10;
+            btnRefresh.Text = "Refresh Data";
+            btnRefresh.UseVisualStyleBackColor = false;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // pnlTotalQuran
             // 
@@ -533,7 +553,7 @@
             Controls.Add(label2);
             Controls.Add(pnlTotalQuran);
             Controls.Add(pnlTotalDonatur);
-            Controls.Add(button7);
+            Controls.Add(btnRefresh);
             Controls.Add(panel1);
             Name = "Dashboard";
             Text = "Form1";
@@ -567,7 +587,7 @@
         private Button btdDaDonatur1;
         private Button btnDashboard;
         private Panel pnlTotalDonatur;
-        private Button button7;
+        private Button btnRefresh;
         private Panel pnlTotalQuran;
         private Label label2;
         private Label label6;
@@ -599,5 +619,6 @@
         private Label label8;
         private Label label11;
         private Label label7;
+        private Button btnUserAkun;
     }
 }

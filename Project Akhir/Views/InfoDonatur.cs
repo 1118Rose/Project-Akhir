@@ -1,15 +1,5 @@
-﻿using Npgsql;
-using Project_Akhir.Controllers;
-using Project_Akhir.Database;
-using Project_Akhir.Helpers;
-using Project_Akhir.Models;
+﻿using Project_Akhir.Controllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 
 namespace Project_Akhir
 {
@@ -20,7 +10,7 @@ namespace Project_Akhir
             InitializeComponent();
         }
 
-        private void InfoDonatur_Load(object sender, EventArgs e)
+        private void LoadDonatur()
         {
             InfoDonaturController ctrl = new InfoDonaturController();
 
@@ -28,17 +18,19 @@ namespace Project_Akhir
 
             // Styling DataGridView
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
             dataGridView2.BackgroundColor = Color.White;
             dataGridView2.BorderStyle = BorderStyle.None;
             dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView2.RowHeadersVisible = false;
             dataGridView2.AllowUserToAddRows = false;
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridView2.EnableHeadersVisualStyles = false;
             dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
             dataGridView2.GridColor = Color.White;
+        }
+        private void InfoDonatur_Load(object sender, EventArgs e)
+        {
+            LoadDonatur();
         }
         private void txtNamaDonatur_TextChanged(object sender, EventArgs e)
         {
@@ -90,16 +82,32 @@ namespace Project_Akhir
             this.Hide();
         }
 
-        FormResizer resize = new FormResizer();
-
-        private void Login_Load(object sender, EventArgs e)
+        private void btnSearchDonatur_Click(object sender, EventArgs e)
         {
-            resize.SaveInitialSize(this);
+            InfoDonaturController ctrl = new InfoDonaturController();
+
+            dataGridView2.DataSource = ctrl.FilterTanggal(dateTimePicker1.Value);
         }
 
-        private void Login_Resize(object sender, EventArgs e)
+        private void btnUserAkun3_Click(object sender, EventArgs e)
         {
-            resize.ResizeControls(this);
+            UserAkun frm = new UserAkun();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnRefresh2_Click(object sender, EventArgs e)
+        {
+            LoadDonatur();
+
+            txtNamaDonatur.Clear();
+            dateTimePicker1.Value = DateTime.Now;
+
+            MessageBox.Show(
+                "Data berhasil diperbarui",
+                "Refresh",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
     }
 

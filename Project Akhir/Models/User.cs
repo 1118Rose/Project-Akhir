@@ -7,7 +7,6 @@ namespace Project_Akhir.Models
         // ABSTRACT CLASS
         public abstract class User
         {
-            // ENCAPSULATION
             private string username;
             private string password;
 
@@ -22,6 +21,11 @@ namespace Project_Akhir.Models
                 get { return password; }
                 set { password = value; }
             }
+
+            public string Nama { get; set; }
+            public string Email { get; set; }
+            public string NoTelp { get; set; }
+            public DateTime TanggalDaftar { get; set; }
 
             public abstract string GetRole();
         }

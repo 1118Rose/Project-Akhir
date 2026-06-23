@@ -1,5 +1,4 @@
 using Project_Akhir.Controllers;
-using Project_Akhir.Helpers;
 using Project_Akhir.Models;
 using System;
 using System.Windows.Forms;
@@ -64,18 +63,6 @@ namespace Project_Akhir
             register.Show();
 
             this.Hide();
-        }
-
-        FormResizer resize = new FormResizer();
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-            resize.SaveInitialSize(this);
-        }
-
-        private void Login_Resize(object sender, EventArgs e)
-        {
-            resize.ResizeControls(this);
         }
     }
 }

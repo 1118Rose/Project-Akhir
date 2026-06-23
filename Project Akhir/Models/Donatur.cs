@@ -1,6 +1,6 @@
 ﻿namespace Project_Akhir.Models
 {
-    public class Donatur //class donatur
+    public class Donatur
     {
         
         // Encapsulation

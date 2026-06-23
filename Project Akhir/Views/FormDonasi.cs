@@ -1,5 +1,4 @@
 using Project_Akhir.Controllers;
-using Project_Akhir.Helpers;
 using Project_Akhir.Models;
 using System;
 using System.Collections.Generic;
@@ -31,7 +30,16 @@ namespace Project_Akhir
                 dtr.Email = txEmail.Text;
                 if (!txEmail.Text.Contains("@"))
                 {
-                    MessageBox.Show("Format email tidak valid!");
+                    MessageBox.Show("Format email tidak valid!", "Peringantan",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                    return;
+                }
+                if (txNoTelp.Text.Length < 12)
+                {
+                    MessageBox.Show("Nomor telepon harus terdiri dari minimal 12 digit.", "Peringatan",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -114,18 +122,6 @@ namespace Project_Akhir
             Login frm = new Login ();
             frm.Show();
             this.Hide();
-        }
-
-        FormResizer resize = new FormResizer();
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-            resize.SaveInitialSize(this);
-        }
-
-        private void Login_Resize(object sender, EventArgs e)
-        {
-            resize.ResizeControls(this);
         }
 
     }

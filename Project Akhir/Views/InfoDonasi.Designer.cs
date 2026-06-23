@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoDonasi));
             panel2 = new Panel();
+            btnUserAkun2 = new Button();
             btnLaporan3 = new Button();
             pictureBox1 = new PictureBox();
             btnLogout3 = new Button();
@@ -40,11 +41,11 @@
             lblJenisDonasi = new Label();
             btnCariDonasi = new Button();
             txtJenisDonasi = new TextBox();
-            dataGridView3 = new DataGridView();
-            button4 = new Button();
+            btnSearchDonasi = new Button();
             label2 = new Label();
             dateTimePicker1 = new DateTimePicker();
-            button9 = new Button();
+            btnRefresh3 = new Button();
+            dataGridView3 = new DataGridView();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -54,6 +55,7 @@
             // 
             panel2.BackColor = Color.White;
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.Controls.Add(btnUserAkun2);
             panel2.Controls.Add(btnLaporan3);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(btnLogout3);
@@ -66,11 +68,29 @@
             panel2.Size = new Size(190, 581);
             panel2.TabIndex = 11;
             // 
+            // btnUserAkun2
+            // 
+            btnUserAkun2.AutoEllipsis = true;
+            btnUserAkun2.BackColor = Color.Transparent;
+            btnUserAkun2.FlatStyle = FlatStyle.Flat;
+            btnUserAkun2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUserAkun2.ForeColor = Color.White;
+            btnUserAkun2.Image = (Image)resources.GetObject("btnUserAkun2.Image");
+            btnUserAkun2.ImageAlign = ContentAlignment.MiddleLeft;
+            btnUserAkun2.Location = new Point(22, 422);
+            btnUserAkun2.Name = "btnUserAkun2";
+            btnUserAkun2.Size = new Size(150, 36);
+            btnUserAkun2.TabIndex = 14;
+            btnUserAkun2.Text = "    User Akun";
+            btnUserAkun2.UseVisualStyleBackColor = false;
+            btnUserAkun2.Click += btnUserAkun2_Click;
+            // 
             // btnLaporan3
             // 
             btnLaporan3.BackColor = Color.Transparent;
             btnLaporan3.FlatStyle = FlatStyle.Flat;
             btnLaporan3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLaporan3.ForeColor = Color.White;
             btnLaporan3.Image = Properties.Resources.icon_park_outline__table_report;
             btnLaporan3.ImageAlign = ContentAlignment.MiddleLeft;
             btnLaporan3.Location = new Point(21, 363);
@@ -104,7 +124,7 @@
             btnLogout3.TabIndex = 9;
             btnLogout3.Text = "Logout";
             btnLogout3.UseVisualStyleBackColor = false;
-            btnLogout3.Click += this.btnLogout3_Click;
+            btnLogout3.Click += btnLogout3_Click;
             // 
             // btnDaSi
             // 
@@ -112,6 +132,7 @@
             btnDaSi.BackgroundImage = (Image)resources.GetObject("btnDaSi.BackgroundImage");
             btnDaSi.FlatStyle = FlatStyle.Flat;
             btnDaSi.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDaSi.ForeColor = Color.White;
             btnDaSi.Image = Properties.Resources.gg__box__2_;
             btnDaSi.ImageAlign = ContentAlignment.MiddleLeft;
             btnDaSi.Location = new Point(22, 307);
@@ -126,6 +147,7 @@
             btnDaDonatur3.BackColor = Color.Transparent;
             btnDaDonatur3.FlatStyle = FlatStyle.Flat;
             btnDaDonatur3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDaDonatur3.ForeColor = Color.White;
             btnDaDonatur3.Image = Properties.Resources.wordpress__people__1_;
             btnDaDonatur3.ImageAlign = ContentAlignment.MiddleLeft;
             btnDaDonatur3.Location = new Point(22, 253);
@@ -141,6 +163,7 @@
             btnDashboard3.BackColor = Color.Transparent;
             btnDashboard3.FlatStyle = FlatStyle.Flat;
             btnDashboard3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDashboard3.ForeColor = Color.White;
             btnDashboard3.Image = Properties.Resources.lsicon__home_outline__2_;
             btnDashboard3.ImageAlign = ContentAlignment.MiddleLeft;
             btnDashboard3.Location = new Point(22, 198);
@@ -190,23 +213,15 @@
             txtJenisDonasi.Size = new Size(167, 27);
             txtJenisDonasi.TabIndex = 21;
             // 
-            // dataGridView3
+            // btnSearchDonasi
             // 
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(214, 217);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersWidth = 51;
-            dataGridView3.Size = new Size(816, 310);
-            dataGridView3.TabIndex = 24;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(949, 163);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 29);
-            button4.TabIndex = 30;
-            button4.Text = "Search";
-            button4.UseVisualStyleBackColor = true;
+            btnSearchDonasi.Location = new Point(949, 163);
+            btnSearchDonasi.Name = "btnSearchDonasi";
+            btnSearchDonasi.Size = new Size(75, 29);
+            btnSearchDonasi.TabIndex = 30;
+            btnSearchDonasi.Text = "Search";
+            btnSearchDonasi.UseVisualStyleBackColor = true;
+            btnSearchDonasi.Click += btnSearchDonasi_Click;
             // 
             // label2
             // 
@@ -225,18 +240,28 @@
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 28;
             // 
-            // button9
+            // btnRefresh3
             // 
-            button9.BackColor = Color.White;
-            button9.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button9.Image = Properties.Resources.solar__refresh_broken;
-            button9.ImageAlign = ContentAlignment.MiddleLeft;
-            button9.Location = new Point(211, 533);
-            button9.Name = "button9";
-            button9.Size = new Size(155, 36);
-            button9.TabIndex = 31;
-            button9.Text = "Refresh Data";
-            button9.UseVisualStyleBackColor = false;
+            btnRefresh3.BackColor = Color.White;
+            btnRefresh3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnRefresh3.Image = Properties.Resources.solar__refresh_broken;
+            btnRefresh3.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRefresh3.Location = new Point(211, 533);
+            btnRefresh3.Name = "btnRefresh3";
+            btnRefresh3.Size = new Size(155, 36);
+            btnRefresh3.TabIndex = 31;
+            btnRefresh3.Text = "Refresh Data";
+            btnRefresh3.UseVisualStyleBackColor = false;
+            btnRefresh3.Click += btnRefresh3_Click;
+            // 
+            // dataGridView3
+            // 
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Location = new Point(214, 217);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.RowHeadersWidth = 51;
+            dataGridView3.Size = new Size(816, 310);
+            dataGridView3.TabIndex = 24;
             // 
             // InfoDonasi
             // 
@@ -244,8 +269,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1039, 581);
-            Controls.Add(button9);
-            Controls.Add(button4);
+            Controls.Add(btnRefresh3);
+            Controls.Add(btnSearchDonasi);
             Controls.Add(label2);
             Controls.Add(dateTimePicker1);
             Controls.Add(dataGridView3);
@@ -277,10 +302,11 @@
         private Label lblJenisDonasi;
         private Button btnCariDonasi;
         private TextBox txtJenisDonasi;
-        private DataGridView dataGridView3;
-        private Button button4;
+        private Button btnSearchDonasi;
         private Label label2;
         private DateTimePicker dateTimePicker1;
-        private Button button9;
+        private Button btnRefresh3;
+        private DataGridView dataGridView3;
+        private Button btnUserAkun2;
     }
 }

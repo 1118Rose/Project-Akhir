@@ -4,7 +4,6 @@ using LiveChartsCore.SkiaSharpView.WinForms;
 using Npgsql;
 using Project_Akhir.Controllers;
 using Project_Akhir.Database;
-using Project_Akhir.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -160,20 +159,15 @@ namespace Project_Akhir
             MessageBox.Show("Anda Telah Logout");
 
             Login frm = new Login();
-            frm.Show(); 
+            frm.Show();
             this.Hide();
         }
 
-        FormResizer resize = new FormResizer();
-
-        private void Login_Load(object sender, EventArgs e)
+        private void btnUserAkun4_Click(object sender, EventArgs e)
         {
-            resize.SaveInitialSize(this);
-        }
-
-        private void Login_Resize(object sender, EventArgs e)
-        {
-            resize.ResizeControls(this);
+            UserAkun frm = new UserAkun();
+            frm.Show();
+            this.Hide();
         }
     }
 }

@@ -7,5 +7,7 @@ namespace Project_Akhir.Models
     public interface IAutentikasi
     {
         string Login(string username, string password);
+
+        bool Register(string email, string username, string password);
     }
 }

@@ -62,6 +62,7 @@
             label2 = new Label();
             txtDonasiUangTunai = new Label();
             pnlChartUangTunai = new Panel();
+            btnUserAkun4 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             pnlMingguIni.SuspendLayout();
@@ -74,6 +75,7 @@
             button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
             button2.Image = Properties.Resources.icon_park_outline__table_report;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
             button2.Location = new Point(21, 363);
@@ -113,6 +115,7 @@
             btnDaDonasi4.BackColor = Color.Transparent;
             btnDaDonasi4.FlatStyle = FlatStyle.Flat;
             btnDaDonasi4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDaDonasi4.ForeColor = Color.White;
             btnDaDonasi4.Image = Properties.Resources.gg__box__2_;
             btnDaDonasi4.ImageAlign = ContentAlignment.MiddleLeft;
             btnDaDonasi4.Location = new Point(22, 307);
@@ -128,6 +131,7 @@
             btdDaDonatur4.BackColor = Color.Transparent;
             btdDaDonatur4.FlatStyle = FlatStyle.Flat;
             btdDaDonatur4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btdDaDonatur4.ForeColor = Color.White;
             btdDaDonatur4.Image = Properties.Resources.wordpress__people__1_;
             btdDaDonatur4.ImageAlign = ContentAlignment.MiddleLeft;
             btdDaDonatur4.Location = new Point(22, 253);
@@ -143,6 +147,7 @@
             btnDashboard4.BackColor = Color.Transparent;
             btnDashboard4.FlatStyle = FlatStyle.Flat;
             btnDashboard4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnDashboard4.ForeColor = Color.White;
             btnDashboard4.Image = Properties.Resources.lsicon__home_outline__2_;
             btnDashboard4.ImageAlign = ContentAlignment.MiddleLeft;
             btnDashboard4.Location = new Point(22, 198);
@@ -157,6 +162,7 @@
             // 
             panel2.BackColor = Color.White;
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.Controls.Add(btnUserAkun4);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(btnLogout4);
@@ -437,6 +443,23 @@
             pnlChartUangTunai.Size = new Size(439, 250);
             pnlChartUangTunai.TabIndex = 24;
             // 
+            // btnUserAkun4
+            // 
+            btnUserAkun4.AutoEllipsis = true;
+            btnUserAkun4.BackColor = Color.Transparent;
+            btnUserAkun4.FlatStyle = FlatStyle.Flat;
+            btnUserAkun4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUserAkun4.ForeColor = Color.White;
+            btnUserAkun4.Image = (Image)resources.GetObject("btnUserAkun4.Image");
+            btnUserAkun4.ImageAlign = ContentAlignment.MiddleLeft;
+            btnUserAkun4.Location = new Point(21, 420);
+            btnUserAkun4.Name = "btnUserAkun4";
+            btnUserAkun4.Size = new Size(150, 36);
+            btnUserAkun4.TabIndex = 16;
+            btnUserAkun4.Text = "    User Akun";
+            btnUserAkun4.UseVisualStyleBackColor = false;
+            btnUserAkun4.Click += btnUserAkun4_Click;
+            // 
             // Laporan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -499,5 +522,6 @@
         private Label label11;
         private Label txtDonasiUangTunai;
         private Panel pnlChartUangTunai;
+        private Button btnUserAkun4;
     }
 }

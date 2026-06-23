@@ -1,7 +1,6 @@
 using Project_Akhir.Controllers;
 using System;
 using System.Windows.Forms;
-using Project_Akhir.Helpers;
 
 namespace Project_Akhir
 {
@@ -31,6 +30,21 @@ namespace Project_Akhir
             UIHelper.RoundPanel(pnlTotalUang, 15);
 
             dgvDonatur.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            LoadDashboard();
+        }
+
+        private void LoadDashboard()
+        {
+            DashboardController ctrl = new DashboardController();
+
+            lblTotalDonatur.Text = ctrl.GetTotalDonatur();
+            lblAlQuran.Text = ctrl.GetTotalAlQuran();
+            lblMakanan.Text = ctrl.GetTotalMakanan();
+            lblAlatSholatt.Text = ctrl.GetTotalAlatSholat();
+            lblUangTunai.Text = ctrl.GetTotalUangTunai();
+
+            dgvDonatur.DataSource = ctrl.GetDonasiTerbaru();
         }
 
         private void btdDaDonatur1_Click(object sender, EventArgs e)
@@ -67,16 +81,22 @@ namespace Project_Akhir
             this.Hide();
         }
 
-        FormResizer resize = new FormResizer();
-
-        private void Login_Load(object sender, EventArgs e)
+        private void btnUserAkun_Click(object sender, EventArgs e)
         {
-            resize.SaveInitialSize(this);
+            UserAkun frm = new UserAkun();
+            frm.Show();
+            this.Hide();
         }
 
-        private void Login_Resize(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-            resize.ResizeControls(this);
+            LoadDashboard();
+
+            MessageBox.Show(
+                "Data berhasil diperbarui",
+                "Refresh",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
     }
 }
